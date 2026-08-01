@@ -8,15 +8,17 @@ Copy `.env.example` to `.env.local` for local development. Set production values
 
 ## Stripe checkout
 
+The donation page now mirrors the Cuba New pattern: preset amounts and “any amount” hand off to Stripe-hosted Payment Links. Add the five public `NEXT_PUBLIC_DONATE_*` URLs to activate those buttons. Do not reuse Cuba New’s links; they belong to a different project.
+
 The current `/api/checkout` route is a safe placeholder that always returns `503 CHECKOUT_NOT_CONFIGURED`.
 
 Before enabling it:
 
 1. Create and verify the organization’s Stripe account.
 2. Decide whether membership is recurring and whether donations are fixed, variable, or both.
-3. Create Stripe Products and Prices, then set the relevant environment variables.
+3. Create Stripe Payment Links for flexible and preset donations, then set the public link variables. If a custom server flow is later required, use Checkout Sessions.
 4. Install the official Stripe server SDK.
-5. Replace the placeholder with a server-side Checkout Session endpoint. Never expose `STRIPE_SECRET_KEY` to browser code.
+5. For a custom server flow, replace the placeholder with a server-side Checkout Session endpoint. Prefer a restricted key with minimum permissions; never expose it to browser code.
 6. Allow only known Price IDs, validate amounts server-side, set success/cancel URLs from `NEXT_PUBLIC_SITE_URL`, and add idempotency protection.
 7. Add a webhook endpoint and verify signatures with `STRIPE_WEBHOOK_SECRET`.
 8. Store fulfillment state only after verified webhook events.
