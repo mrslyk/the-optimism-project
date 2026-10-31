@@ -43,9 +43,9 @@ export const researchSources: ResearchSource[] = [
     href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3424419/",
   },
   {
-    id: "korn-2016", year: 2016,
+    id: "kuzmanovic-2016", year: 2016,
     title: "The role of neural reward circuitry in self-referential optimistic belief updates",
-    authors: "Korn, Sharot, Walter, Heekeren & Dolan", journal: "NeuroImage", kind: "Primary fMRI study", signal: "Developing",
+    authors: "Kuzmanovic, Jefferson & Vogeley", journal: "NeuroImage", kind: "Primary fMRI study", signal: "Developing",
     pathway: "vmPFC · ventral striatum · self-valuation",
     finding: "Self-related favorable updating engaged regions implicated in subjective value and reward processing.",
     caution: "The work links task behavior to brain activity; it does not show that these regions uniquely produce optimism.",
@@ -79,11 +79,11 @@ export const researchSources: ResearchSource[] = [
     href: "https://pubmed.ncbi.nlm.nih.gov/19272441/",
   },
   {
-    id: "hanssen-2020", year: 2020,
+    id: "nicolson-2020", year: 2020,
     title: "Imagining a positive future reduces cortisol response to awakening and reactivity to acute stress",
-    authors: "Hanssen et al.", journal: "Psychoneuroendocrinology", kind: "Randomized intervention study", signal: "Developing",
+    authors: "Nicolson, Peters & In den Bosch-Meevissen", journal: "Psychoneuroendocrinology", kind: "Randomized intervention study", signal: "Developing",
     pathway: "Future imagery · HPA axis · cortisol",
-    finding: "A positive-future imagery intervention changed some cortisol responses relative to control conditions.",
+    finding: "Two weeks of positive-future imagery reduced cortisol responses relative to an active control, but did not produce a greater increase in measured optimism.",
     caution: "A short laboratory intervention and cortisol endpoints are not evidence of durable health effects or clinical efficacy.",
     href: "https://pubmed.ncbi.nlm.nih.gov/32344176/",
   },
@@ -126,10 +126,10 @@ export const researchSources: ResearchSource[] = [
 ];
 
 export const pathwaySummary = [
-  ["01", "Prediction", "The brain simulates possible futures and assigns them personal value.", "ACC · vmPFC · hippocampal networks"],
-  ["02", "Updating", "New information changes expectations, sometimes asymmetrically by valence.", "IFG · prefrontal control · estimation error"],
-  ["03", "Learning", "Reward and punishment prediction errors shape what feels worth pursuing.", "Dopamine · striatum · amygdala"],
-  ["04", "Stress", "Appraisal interacts with endocrine, autonomic, and immune responses.", "HPA axis · cortisol · inflammation"],
-  ["05", "Experience", "Adversity, safety, relationships, and culture tune expectations over time.", "Development · social context · learning history"],
-  ["06", "Action", "Behavior can reinforce agency or helplessness through real-world feedback.", "Coping · habits · environment · opportunity"],
+  ["01", "Prediction", "The brain simulates possible futures and assigns them personal value.", "Imagining future events"],
+  ["02", "Updating", "Good news and bad news can affect our expectations differently.", "Responding to new information"],
+  ["03", "Learning", "Experience teaches us which outcomes to expect and which actions to repeat.", "Learning from outcomes"],
+  ["04", "Stress", "Research examines how outlook relates to stress responses in the body.", "The body’s response to stress"],
+  ["05", "Experience", "Adversity, safety, relationships, and culture tune expectations over time.", "The circumstances we live through"],
+  ["06", "Action", "Behavior can reinforce agency or helplessness through real-world feedback.", "What happens when we act"],
 ];

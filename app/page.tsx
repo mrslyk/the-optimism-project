@@ -2,16 +2,16 @@ import Link from "next/link";
 import { Footer, Header } from "./site-chrome";
 
 const pillars = [
-  ["01", "Understand it", "A plain-language guide to optimism: what it is, what it isn’t, and how it differs from denial.", "/what-optimism-is"],
-  ["02", "Examine the evidence", "Research organized by question and clearly labeled by strength, limitations, and open debates.", "/science-evidence"],
-  ["03", "Put it to work", "Small, repeatable practices for attention, interpretation, goals, and collective agency.", "/practices-tools"],
+  ["01", "Understand it", "Why pursue an intervention for pessimism, and what would success look like?", "/what-optimism-is"],
+  ["02", "Examine the evidence", "Read the studies on expectations, learning, stress, and reward that inform the project.", "/science-evidence"],
+  ["03", "Try a practice", "Explore simple exercises for examining expectations and deciding what to do next.", "/practices-tools"],
 ];
 
 const pathways = [
-  ["⌁", "Expert directory", "A responsible framework for discovering researchers, educators, and practitioners.", "/experts"],
-  ["↗", "News & research", "A curated briefing model that separates new findings from interpretation and hype.", "/news-research"],
-  ["◎", "Community", "Prompts, local circles, stories, and ways to learn in public without forced positivity.", "/community"],
-  ["◇", "Projects & funding", "A future home for aligned initiatives, grants, membership, and transparent support.", "/projects-funding"],
+  ["⌁", "Expert directory", "Start with the researchers whose published work informs the project.", "/experts"],
+  ["↗", "News & research", "Follow research on outlook, motivation, and the biology of change.", "/news-research"],
+  ["◎", "Community", "Help shape the questions this project should be asking.", "/community"],
+  ["◇", "Projects & funding", "See the research and public resources we want to develop.", "/projects-funding"],
 ];
 
 export default function Home() {
@@ -21,11 +21,11 @@ export default function Home() {
       <main>
         <section className="hero">
           <div className="hero-copy wrap">
-            <p className="eyebrow">A public project for realistic hope</p>
-            <h1>A clearer way to face <em>what’s next.</em></h1>
-            <p className="hero-dek">Pessimism gets a head start. We map the brain, body, and lived pathways that shape expectations—then ask how greater possibility might be learned, supported, and scientifically developed.</p>
+            <p className="eyebrow">The search for</p>
+            <h1>An Ozempic<br/>for <em>pessimism.</em></h1>
+            <p className="hero-dek">What if expecting the worst didn’t have to be someone’s default? Our ambition is to understand persistent pessimism well enough to develop better ways to change it.</p>
             <div className="hero-actions">
-              <Link className="button button-light" href="/what-optimism-is">Start with the idea <span>→</span></Link>
+              <Link className="button button-light" href="/what-optimism-is">Explore the mission <span>→</span></Link>
               <Link className="text-link light" href="/science-evidence">Explore the evidence <span>↗</span></Link>
             </div>
           </div>
@@ -33,7 +33,7 @@ export default function Home() {
             <div className="orbit orbit-one" />
             <div className="orbit orbit-two" />
             <div className="sun" />
-            <p>NOT BLIND<br/>POSITIVITY.<br/><strong>BETTER<br/>POSSIBILITY.</strong></p>
+            <p>UNDERSTAND<br/>THE MIND.<br/><strong>CHANGE<br/>THE OUTLOOK.</strong></p>
           </div>
           <div className="hero-ticker"><span>SCIENCE</span><i>•</i><span>PRACTICE</span><i>•</i><span>COMMUNITY</span><i>•</i><span>ACTION</span><i>•</i><span>SCIENCE</span></div>
         </section>
@@ -41,38 +41,37 @@ export default function Home() {
         <section className="definition wrap section">
           <div>
             <p className="kicker">The thesis</p>
-            <h2>Optimism is not a forecast.<br/>It’s a way of engaging.</h2>
+            <h2>Can we change the mechanisms<br/>behind pessimism?</h2>
           </div>
           <div className="definition-copy">
-            <p>We use <strong>optimism</strong> to mean a reasoned orientation toward possibility: noticing what could improve, identifying what can be influenced, and choosing useful action without ignoring risk or pain.</p>
-            <p className="note">Our “counterweight to pessimism” language is a creative metaphor, not a medical claim. This project is for education and general wellbeing—not diagnosis, treatment, or a substitute for professional care.</p>
+            <p>GLP-1 medicines showed what becomes possible when we understand and act on the biology of appetite. We want to bring that ambition to pessimism: investigate the mechanisms behind a persistently negative outlook, and find out which of them can be changed.</p>
+            <p className="note">“Ozempic for pessimism” describes the goal. The project is at the research-agenda stage; it has no treatment available and does not recommend Ozempic for pessimism.</p>
           </div>
         </section>
 
         <section className="signal-band">
           <div className="wrap signal-grid">
             <div>
-              <p className="kicker coral">Our evidence promise</p>
-              <h2>Confidence should be visible.</h2>
-              <p>The source library now links published work on future simulation, belief updating, dopamine, stress biology, inflammation, development, and GLP-1 reward signaling.</p>
-              <Link className="text-link" href="/science-evidence">Read the evidence standard <span>→</span></Link>
+              <p className="kicker coral">Why this is worth studying</p>
+              <h2>How do expectations change?</h2>
+              <p>Researchers have studied how we imagine the future, respond to good and bad news, and revise our expectations. Those findings give us questions to test: what makes pessimism persist, and what could help it shift?</p>
+              <Link className="text-link" href="/science-evidence">Explore the science <span>→</span></Link>
             </div>
             <div className="signal-card">
-              <p className="mini">THE SIGNAL KEY</p>
-              <div><b className="dot strong" /> <span><strong>Supported</strong> Converging, higher-quality evidence</span></div>
-              <div><b className="dot developing" /> <span><strong>Developing</strong> Promising, mixed, or early evidence</span></div>
-              <div><b className="dot open" /> <span><strong>Open question</strong> Hypothesis or active debate</span></div>
-              <div><b className="dot perspective" /> <span><strong>Perspective</strong> Expert interpretation or opinion</span></div>
+              <p className="mini">THREE QUESTIONS TO PURSUE</p>
+              <div><b className="dot strong" /> <span><strong>What drives it?</strong> The biology, experience, and circumstances behind a negative outlook.</span></div>
+              <div><b className="dot developing" /> <span><strong>What changes it?</strong> The effects of learning, practice, environment, and biological interventions.</span></div>
+              <div><b className="dot open" /> <span><strong>Does it last?</strong> Whether a change in outlook improves everyday life over time.</span></div>
             </div>
           </div>
         </section>
 
-        <section className="research-feature"><div className="wrap research-feature-inner"><div><p className="kicker coral">The central research program</p><h2>Can we develop a counterweight to persistent pessimism?</h2><p>GLP-1 therapies changed how medicine thinks about metabolism and appetite. Our research thesis asks whether metabolic–reward signaling can also illuminate future belief, motivation, and pessimism. Today, that is a hypothesis—not a treatment.</p><div><Link className="button button-light" href="/research-program">Explore the program <span>→</span></Link><Link className="text-link light" href="/science-evidence">Read the papers <span>↗</span></Link></div></div><div className="research-mark" aria-hidden="true"><span>GLP</span><b>?</b><small>HYPOTHESIS<br/>NOT TREATMENT</small></div></div></section>
+        <section className="research-feature"><div className="wrap research-feature-inner"><div><p className="kicker coral">Our research ambition</p><h2>What would an intervention for pessimism actually do?</h2><p>It would help someone form a more flexible view of their future while keeping their judgment intact. Getting there means understanding the mechanisms, finding a useful target, and testing whether a change is safe, meaningful, and lasting.</p><div><Link className="button button-light" href="/research-program">Read the research agenda <span>→</span></Link><Link className="text-link light" href="/science-evidence">Read the papers <span>↗</span></Link></div></div><div className="research-mark" aria-hidden="true"><span>What</span><b>if?</b><small>THE RESEARCH<br/>STARTS HERE</small></div></div></section>
 
         <section className="wrap section">
           <div className="section-heading">
             <p className="kicker">Three ways in</p>
-            <h2>From idea to evidence to action.</h2>
+            <h2>Understand the idea. Follow the science.</h2>
           </div>
           <div className="pillar-grid">
             {pillars.map(([n, title, body, href]) => (
@@ -87,19 +86,19 @@ export default function Home() {
           <div className="wrap practice-grid">
             <div className="practice-art" aria-hidden="true"><span>3</span><p>GOOD<br/>POSSIBILITIES</p></div>
             <div>
-              <p className="kicker">Try one now · 4 minutes</p>
+              <p className="kicker">Something to try today</p>
               <h2>The possibility scan</h2>
               <p>Choose one situation that feels stuck. Write three plausible ways it could improve—then name one small action that makes any of them more likely.</p>
               <Link className="button button-dark" href="/practices-tools">Open the practice <span>→</span></Link>
-              <p className="fineprint">A reflective exercise, not a clinical intervention. Stop if it feels unhelpful.</p>
+              <p className="fineprint">A short reflection exercise. Find the research on related practices in our science library.</p>
             </div>
           </div>
         </section>
 
         <section className="wrap section">
           <div className="section-heading split">
-            <div><p className="kicker">The wider project</p><h2>Learn, connect, and build.</h2></div>
-            <p>An evolving public commons for people who want rigor and hope in the same room.</p>
+            <div><p className="kicker">The wider project</p><h2>A home for the whole subject.</h2></div>
+            <p>The ambition goes beyond a single intervention: make the science of optimism easier to find, understand, and build on.</p>
           </div>
           <div className="path-grid">
             {pathways.map(([icon, title, body, href]) => (
@@ -110,8 +109,8 @@ export default function Home() {
 
         <section className="newsletter">
           <div className="wrap newsletter-inner">
-            <div><p className="kicker coral">The Optimism Dispatch</p><h2>Science, argument, and field notes.</h2><p>The publication is ready for its first signed essay. Newsletter sign-up will open when the mailing system is configured.</p><p><Link className="text-link light" href="/blog">Visit the blog <span>→</span></Link></p></div>
-            <form className="signup" aria-label="Newsletter interest form"><label htmlFor="email">EMAIL ADDRESS</label><div><input id="email" type="email" placeholder="you@example.com" disabled/><button disabled>Coming soon</button></div><small>No list is active yet. We won’t collect your address until the system is ready.</small></form>
+            <div><p className="kicker coral">The founding idea</p><h2>Why we’re asking the question.</h2><p>Read the project’s starting argument, explore the evidence behind it, and see which questions remain open.</p><p><Link className="text-link light" href="/what-optimism-is">Read the mission <span>→</span></Link></p></div>
+            <div className="dispatch-links"><p className="kicker">Keep exploring</p><Link className="text-link light" href="/research-program">The research agenda <span>→</span></Link><Link className="text-link light" href="/science-evidence">The source library <span>→</span></Link><Link className="text-link light" href="/about">About the project <span>→</span></Link></div>
           </div>
         </section>
       </main>

@@ -16,8 +16,8 @@ test("renders the finished publication homepage", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /<title>The Optimism Project<\/title>/i);
-  assert.match(html, /Pessimism gets a head start/);
-  assert.match(html, /central research program/i);
+  assert.match(html, /An Ozempic/);
+  assert.match(html, /Our research ambition/i);
   assert.match(html, /href="\/science-evidence"/);
   assert.match(html, /href="\/blog"/);
   assert.match(html, /href="\/donate"/);
@@ -33,11 +33,11 @@ test("ships research, blog, donation, and safety infrastructure", async () => {
     readFile(new URL("../lib/research.ts", import.meta.url), "utf8"),
     readFile(new URL("../.env.example", import.meta.url), "utf8"),
   ]);
-  assert.match(research, /What creates optimism/);
-  assert.match(program, /Current status: hypothesis/);
-  assert.match(program, /no drug, validated target, clinical protocol/i);
-  assert.match(blog, /first signed piece/);
-  assert.match(donate, /Stripe-hosted Payment Link/);
+  assert.match(research, /Why do we expect things/);
+  assert.match(program, /Where we are today/);
+  assert.match(program, /no treatment in development or clinical trial underway/i);
+  assert.match(blog, /first dispatch is still to come/);
+  assert.match(donate, /Donations are not open yet/);
   assert.match(sources, /pubmed\.ncbi\.nlm\.nih\.gov|nature\.com/);
   assert.match(sources, /What it does not prove|caution/i);
   assert.match(env, /NEXT_PUBLIC_DONATE_100_URL=/);

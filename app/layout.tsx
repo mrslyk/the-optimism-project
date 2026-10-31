@@ -9,7 +9,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://the-optimism-projec
 const siteSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Organization", "@id": `${siteUrl}/#organization`, name: "The Optimism Project", url: siteUrl, description: "Independent public education and research on the brain, body, science, and practice of realistic optimism." },
+    { "@type": "Organization", "@id": `${siteUrl}/#organization`, name: "The Optimism Project", url: siteUrl, description: "A research initiative exploring the causes of persistent pessimism and the possibility of developing interventions to change it." },
     { "@type": "WebSite", "@id": `${siteUrl}/#website`, name: "The Optimism Project", url: siteUrl, inLanguage: "en", publisher: { "@id": `${siteUrl}/#organization` } },
   ],
 };
@@ -17,10 +17,10 @@ const siteSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "The Optimism Project", template: "%s — The Optimism Project" },
-  description: "The brain, body, science, and practice of realistic optimism—and a rigorous research agenda for pessimism.",
+  description: "The search for an Ozempic for pessimism. Explore the science, people, and research questions behind changing a persistently negative outlook.",
   icons: { icon: "/favicon.svg" },
-  openGraph: { title: "The Optimism Project", description: "The science of what makes the future feel possible.", url: siteUrl, siteName: "The Optimism Project", images: ["/og.png"], type: "website" },
-  twitter: { card: "summary_large_image", title: "The Optimism Project", description: "A clearer way to face what’s next.", images: ["/og.png"] },
+  openGraph: { title: "The Optimism Project", description: "The search for an Ozempic for pessimism.", url: siteUrl, siteName: "The Optimism Project", images: ["/og.png"], type: "website" },
+  twitter: { card: "summary_large_image", title: "The Optimism Project", description: "The science of changing outlook.", images: ["/og.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
