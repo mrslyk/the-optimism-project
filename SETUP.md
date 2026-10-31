@@ -2,7 +2,19 @@
 
 The public pages are ready to deploy. Payments, membership, donations, newsletter collection, and contact delivery are intentionally not live.
 
-## Environment variables
+## Netlify deployment
+
+Connect the GitHub repository's `main` branch to Netlify. The checked-in
+`netlify.toml` runs `npm run build:netlify`, publishes `.next`, and enables
+Netlify's Next.js adapter. This uses native Next.js for Netlify while
+`npm run build` preserves the existing Sites build.
+
+Netlify's `URL` environment variable supplies the public origin for metadata,
+robots, and the sitemap. Set `NEXT_PUBLIC_SITE_URL` to override it for a custom
+domain. `tsconfig.netlify.json` checks the Next.js application without including
+the unused Cloudflare Worker starter files.
+
+## Environment values
 
 Copy `.env.example` to `.env.local` for local development. Set production values in the hosting provider rather than committing them.
 
