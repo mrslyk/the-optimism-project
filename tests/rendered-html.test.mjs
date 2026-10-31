@@ -16,8 +16,12 @@ test("renders the finished publication homepage", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /<title>The Optimism Project<\/title>/i);
-  assert.match(html, /An Ozempic/);
-  assert.match(html, /Our research ambition/i);
+  assert.match(html, /The science/);
+  assert.match(html, /of <em>optimism/);
+  assert.doesNotMatch(html, /Ozempic/);
+  assert.match(html, /Get to know optimism/i);
+  assert.match(html, /href="\/benefits"/);
+  assert.match(html, /href="\/causes-of-optimism"/);
   assert.match(html, /href="\/science-evidence"/);
   assert.match(html, /href="\/blog"/);
   assert.match(html, /href="\/donate"/);
@@ -33,8 +37,8 @@ test("ships research, blog, donation, and safety infrastructure", async () => {
     readFile(new URL("../lib/research.ts", import.meta.url), "utf8"),
     readFile(new URL("../.env.example", import.meta.url), "utf8"),
   ]);
-  assert.match(research, /Why do we expect things/);
-  assert.match(program, /Where we are today/);
+  assert.match(research, /The science of optimism/);
+  assert.match(program, /One research ambition/);
   assert.match(program, /no treatment in development or clinical trial underway/i);
   assert.match(blog, /first dispatch is still to come/);
   assert.match(donate, /Donations are not open yet/);

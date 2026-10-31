@@ -1,120 +1,51 @@
 import Link from "next/link";
 import { Footer, Header } from "./site-chrome";
 
-const pillars = [
-  ["01", "Understand it", "Why pursue an intervention for pessimism, and what would success look like?", "/what-optimism-is"],
-  ["02", "Examine the evidence", "Read the studies on expectations, learning, stress, and reward that inform the project.", "/science-evidence"],
-  ["03", "Try a practice", "Explore simple exercises for examining expectations and deciding what to do next.", "/practices-tools"],
+const topics = [
+  ["01", "What is optimism?", "The meaning of optimism, the different ways researchers study it, and what it means in everyday life.", "/what-optimism-is"],
+  ["02", "Where does it come from?", "What biology, experience, learning, and our surroundings contribute to the way we see the future.", "/causes-of-optimism"],
+  ["03", "Why does it matter?", "Explore the evidence on optimism, coping, wellbeing, health, and the choices we make.", "/benefits"],
 ];
-
 const pathways = [
-  ["⌁", "Expert directory", "Start with the researchers whose published work informs the project.", "/experts"],
-  ["↗", "News & research", "Follow research on outlook, motivation, and the biology of change.", "/news-research"],
-  ["◎", "Community", "Help shape the questions this project should be asking.", "/community"],
-  ["◇", "Projects & funding", "See the research and public resources we want to develop.", "/projects-funding"],
+  ["⌁", "Experts & thinkers", "Meet the researchers behind the ideas and follow their work to its source.", "/experts"],
+  ["↗", "News & research", "New studies and useful findings, explained with dates, context, and links.", "/news-research"],
+  ["◎", "Community", "Optimism in everyday life: the experiences and questions worth sharing.", "/community"],
+  ["◇", "Research frontiers", "What we still want to learn about developing and sustaining optimism.", "/research-program"],
 ];
 
 export default function Home() {
-  return (
-    <>
-      <Header />
-      <main>
-        <section className="hero">
-          <div className="hero-copy wrap">
-            <p className="eyebrow">The search for</p>
-            <h1>An Ozempic<br/>for <em>pessimism.</em></h1>
-            <p className="hero-dek">What if expecting the worst didn’t have to be someone’s default? Our ambition is to understand persistent pessimism well enough to develop better ways to change it.</p>
-            <div className="hero-actions">
-              <Link className="button button-light" href="/what-optimism-is">Explore the mission <span>→</span></Link>
-              <Link className="text-link light" href="/science-evidence">Explore the evidence <span>↗</span></Link>
-            </div>
-          </div>
-          <div className="hero-art" aria-hidden="true">
-            <div className="orbit orbit-one" />
-            <div className="orbit orbit-two" />
-            <div className="sun" />
-            <p>UNDERSTAND<br/>THE MIND.<br/><strong>CHANGE<br/>THE OUTLOOK.</strong></p>
-          </div>
-          <div className="hero-ticker"><span>SCIENCE</span><i>•</i><span>PRACTICE</span><i>•</i><span>COMMUNITY</span><i>•</i><span>ACTION</span><i>•</i><span>SCIENCE</span></div>
-        </section>
+  return <><Header /><main>
+    <section className="hero optimism-hero">
+      <div className="hero-copy wrap">
+        <p className="eyebrow">The Optimism Project</p>
+        <h1>The science<br/>and practice<br/>of <em>optimism.</em></h1>
+        <p className="hero-dek">What optimism is, where it comes from, why it matters, and how to cultivate it. Explore the research, practical tools, and people advancing our understanding—all in one place.</p>
+        <div className="hero-actions"><Link className="button button-light" href="/what-optimism-is">Start with optimism <span>→</span></Link><Link className="text-link light" href="/science-evidence">Explore the science <span>↗</span></Link></div>
+      </div>
+      <div className="hero-art" aria-hidden="true"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="sun"/></div>
+      <div className="hero-ticker"><span>UNDERSTAND</span><i>•</i><span>EXPLORE</span><i>•</i><span>PRACTICE</span><i>•</i><span>CONNECT</span></div>
+    </section>
 
-        <section className="definition wrap section">
-          <div>
-            <p className="kicker">The thesis</p>
-            <h2>Can we change the mechanisms<br/>behind pessimism?</h2>
-          </div>
-          <div className="definition-copy">
-            <p>GLP-1 medicines showed what becomes possible when we understand and act on the biology of appetite. We want to bring that ambition to pessimism: investigate the mechanisms behind a persistently negative outlook, and find out which of them can be changed.</p>
-            <p className="note">“Ozempic for pessimism” describes the goal. The project is at the research-agenda stage; it has no treatment available and does not recommend Ozempic for pessimism.</p>
-          </div>
-        </section>
+    <section className="wrap section">
+      <div className="section-heading"><p className="kicker">Start here</p><h2>Get to know optimism.</h2><p>A guide to the subject, from the basic concepts to the questions researchers are still working to answer.</p></div>
+      <div className="pillar-grid">{topics.map(([n,title,body,href])=><Link href={href} className="pillar" key={href}><span className="pillar-no">{n}</span><h3>{title}</h3><p>{body}</p><span className="circle-arrow">↗</span></Link>)}</div>
+    </section>
 
-        <section className="signal-band">
-          <div className="wrap signal-grid">
-            <div>
-              <p className="kicker coral">Why this is worth studying</p>
-              <h2>How do expectations change?</h2>
-              <p>Researchers have studied how we imagine the future, respond to good and bad news, and revise our expectations. Those findings give us questions to test: what makes pessimism persist, and what could help it shift?</p>
-              <Link className="text-link" href="/science-evidence">Explore the science <span>→</span></Link>
-            </div>
-            <div className="signal-card">
-              <p className="mini">THREE QUESTIONS TO PURSUE</p>
-              <div><b className="dot strong" /> <span><strong>What drives it?</strong> The biology, experience, and circumstances behind a negative outlook.</span></div>
-              <div><b className="dot developing" /> <span><strong>What changes it?</strong> The effects of learning, practice, environment, and biological interventions.</span></div>
-              <div><b className="dot open" /> <span><strong>Does it last?</strong> Whether a change in outlook improves everyday life over time.</span></div>
-            </div>
-          </div>
-        </section>
+    <section className="signal-band"><div className="wrap signal-grid">
+      <div><p className="kicker">The science</p><h2>How do we come to expect good things?</h2><p>Psychology, neuroscience, and health research each offer part of the picture. Start with how optimism is defined and measured, then explore the studies on its origins, effects, and capacity to change.</p><Link className="text-link" href="/science-evidence">Open the research library <span>→</span></Link></div>
+      <div className="signal-card"><p className="mini">THREE WAYS TO STUDY OPTIMISM</p><div><b className="dot strong"/><span><strong>Expectations.</strong> What do people think will happen in their future?</span></div><div><b className="dot developing"/><span><strong>Explanations.</strong> How do people make sense of successes and setbacks?</span></div><div><b className="dot open"/><span><strong>Beliefs and decisions.</strong> How do expectations respond to new information?</span></div><p className="source-inline"><Link href="/science-evidence#library">Read the sources ↗</Link></p></div>
+    </div></section>
 
-        <section className="research-feature"><div className="wrap research-feature-inner"><div><p className="kicker coral">Our research ambition</p><h2>What would an intervention for pessimism actually do?</h2><p>It would help someone form a more flexible view of their future while keeping their judgment intact. Getting there means understanding the mechanisms, finding a useful target, and testing whether a change is safe, meaningful, and lasting.</p><div><Link className="button button-light" href="/research-program">Read the research agenda <span>→</span></Link><Link className="text-link light" href="/science-evidence">Read the papers <span>↗</span></Link></div></div><div className="research-mark" aria-hidden="true"><span>What</span><b>if?</b><small>THE RESEARCH<br/>STARTS HERE</small></div></div></section>
+    <section className="wrap section benefits-feature"><div className="section-heading"><p className="kicker">Why it matters</p><h2>What can optimism bring to our lives?</h2><p>Research connects optimism with the way people cope, pursue goals, and experience wellbeing. Health studies add another important set of questions.</p></div><div className="benefit-grid">
+      <article><span>01 / COPING</span><h3>Responding to difficulty</h3><p>How expectations relate to facing problems, seeking support, and adapting when circumstances change.</p></article>
+      <article><span>02 / MOTIVATION</span><h3>Working toward a future</h3><p>Why believing a worthwhile outcome is possible can matter for effort and persistence.</p></article>
+      <article><span>03 / HEALTH</span><h3>Understanding the connection</h3><p>What studies of optimism, cardiovascular health, and longevity show—and which questions they leave open.</p></article>
+    </div><Link className="text-link" href="/benefits">Explore the benefits and evidence <span>→</span></Link></section>
 
-        <section className="wrap section">
-          <div className="section-heading">
-            <p className="kicker">Three ways in</p>
-            <h2>Understand the idea. Follow the science.</h2>
-          </div>
-          <div className="pillar-grid">
-            {pillars.map(([n, title, body, href]) => (
-              <Link href={href} className="pillar" key={title}>
-                <span className="pillar-no">{n}</span><h3>{title}</h3><p>{body}</p><span className="circle-arrow">↗</span>
-              </Link>
-            ))}
-          </div>
-        </section>
+    <section className="practice-feature"><div className="wrap practice-grid"><div className="practice-art" aria-hidden="true"><span>3</span><p>POSSIBILITIES<br/>TO CONSIDER</p></div><div><p className="kicker">Put it into practice</p><h2>Make room for a better outcome.</h2><p>Choose one situation that feels stuck. Write three plausible ways it could improve. Then choose one small action that could help bring a possibility closer.</p><Link className="button button-dark" href="/practices-tools">Explore the practices <span>→</span></Link><p className="fineprint">A reflection to try today. The practice guide also introduces Best Possible Self and links to the research behind it.</p></div></div></section>
 
-        <section className="practice-feature">
-          <div className="wrap practice-grid">
-            <div className="practice-art" aria-hidden="true"><span>3</span><p>GOOD<br/>POSSIBILITIES</p></div>
-            <div>
-              <p className="kicker">Something to try today</p>
-              <h2>The possibility scan</h2>
-              <p>Choose one situation that feels stuck. Write three plausible ways it could improve—then name one small action that makes any of them more likely.</p>
-              <Link className="button button-dark" href="/practices-tools">Open the practice <span>→</span></Link>
-              <p className="fineprint">A short reflection exercise. Find the research on related practices in our science library.</p>
-            </div>
-          </div>
-        </section>
+    <section className="wrap section"><div className="section-heading split"><div><p className="kicker">Explore the subject</p><h2>The people, ideas,<br/>and work behind optimism.</h2></div><p>Find a researcher, catch up on a study, or explore a question you want to understand better.</p></div><div className="path-grid">{pathways.map(([icon,title,body,href])=><Link href={href} className="path-card" key={href}><span className="path-icon">{icon}</span><h3>{title}</h3><p>{body}</p><span className="text-link">Explore <b>→</b></span></Link>)}</div></section>
 
-        <section className="wrap section">
-          <div className="section-heading split">
-            <div><p className="kicker">The wider project</p><h2>A home for the whole subject.</h2></div>
-            <p>The ambition goes beyond a single intervention: make the science of optimism easier to find, understand, and build on.</p>
-          </div>
-          <div className="path-grid">
-            {pathways.map(([icon, title, body, href]) => (
-              <Link href={href} className="path-card" key={title}><span className="path-icon">{icon}</span><h3>{title}</h3><p>{body}</p><span className="text-link">Explore <b>→</b></span></Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="newsletter">
-          <div className="wrap newsletter-inner">
-            <div><p className="kicker coral">The founding idea</p><h2>Why we’re asking the question.</h2><p>Read the project’s starting argument, explore the evidence behind it, and see which questions remain open.</p><p><Link className="text-link light" href="/what-optimism-is">Read the mission <span>→</span></Link></p></div>
-            <div className="dispatch-links"><p className="kicker">Keep exploring</p><Link className="text-link light" href="/research-program">The research agenda <span>→</span></Link><Link className="text-link light" href="/science-evidence">The source library <span>→</span></Link><Link className="text-link light" href="/about">About the project <span>→</span></Link></div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+    <section className="newsletter"><div className="wrap newsletter-inner"><div><p className="kicker">In the research</p><h2>Can optimism change over time?</h2><p>A 2025 study followed changes in optimism among nearly 13,000 older adults and examined later health and wellbeing. It adds to the evidence on how outlook develops across a lifetime.</p><Link className="text-link light" href="/news-research">Read the research notes <span>→</span></Link></div><div className="dispatch-links"><p className="kicker">Keep exploring</p><Link className="text-link light" href="/practices-tools">Practices & tools <span>→</span></Link><Link className="text-link light" href="/blog">The Optimism Dispatch <span>→</span></Link><Link className="text-link light" href="/about">About the project <span>→</span></Link></div></div></section>
+  </main><Footer/></>;
 }

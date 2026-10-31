@@ -16,6 +16,71 @@ export type ResearchSource = {
 
 export const researchSources: ResearchSource[] = [
   {
+  "id": "carver-2010",
+  "year": 2010,
+  "title": "Optimism",
+  "authors": "Carver, Scheier & Segerstrom",
+  "journal": "Clinical Psychology Review",
+  "kind": "Research review",
+  "signal": "Supported",
+  "pathway": "Definitions · coping · wellbeing",
+  "finding": "Reviews optimism as favorable expectations about the future and its relationships with coping, wellbeing, and health.",
+  "caution": "A broad review brings together different kinds of evidence; it does not establish that every association is causal.",
+  "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4161121/"
+},
+  {
+  "id": "rozanski-2019",
+  "year": 2019,
+  "title": "Association of Optimism With Cardiovascular Events and All-Cause Mortality",
+  "authors": "Rozanski, Bavishi, Kubzansky & Cohen",
+  "journal": "JAMA Network Open",
+  "kind": "Systematic review + meta-analysis · 15 studies",
+  "signal": "Supported",
+  "pathway": "Health · cardiovascular outcomes",
+  "finding": "Across 229,391 participants, higher optimism was associated with lower risk of cardiovascular events and all-cause mortality.",
+  "caution": "Observational evidence and substantial variation between studies limit causal conclusions. Increasing optimism has not been shown here to produce the same health outcomes.",
+  "href": "https://pubmed.ncbi.nlm.nih.gov/31560385/"
+},
+  {
+  "id": "lee-2019",
+  "year": 2019,
+  "title": "Optimism is associated with exceptional longevity in 2 epidemiologic cohorts of men and women",
+  "authors": "Lee et al.",
+  "journal": "PNAS",
+  "kind": "Longitudinal cohort study",
+  "signal": "Developing",
+  "pathway": "Health · longevity",
+  "finding": "Higher optimism was associated with longer life and a greater likelihood of reaching age 85 in two cohorts of older adults.",
+  "caution": "An observational association does not show that an optimism intervention extends life. The cohorts also limit generalization.",
+  "href": "https://pubmed.ncbi.nlm.nih.gov/31451635/"
+},
+  {
+  "id": "chen-2025",
+  "year": 2025,
+  "title": "Changes in optimism and subsequent health and wellbeing outcomes in older adults: an outcome-wide analysis",
+  "authors": "Chen, Nakamura, Kim, Kubzansky & VanderWeele",
+  "journal": "Aging & Mental Health",
+  "kind": "Longitudinal study · n=12,998",
+  "signal": "Developing",
+  "pathway": "Change over time · wellbeing · aging",
+  "finding": "Increases in optimism were associated with several later wellbeing measures, better self-rated health, and lower mortality risk.",
+  "caution": "Associations were not found for specific disease outcomes or health behaviors. Observational changes do not establish cause and effect.",
+  "href": "https://pubmed.ncbi.nlm.nih.gov/39742439/"
+},
+  {
+  "id": "lai-2026",
+  "year": 2026,
+  "title": "A pilot study: virtual reality-based intervention to boost optimism and alleviate stress, anxiety, and depression in undergraduates",
+  "authors": "Lai et al.",
+  "journal": "Frontiers in Psychology",
+  "kind": "Pilot randomized trial · n=28",
+  "signal": "Developing",
+  "pathway": "Practice · virtual reality · optimism",
+  "finding": "A positive cognitive behavioral VR program improved measured optimism in the short term compared with a task-based VR control.",
+  "caution": "The sample was small. Group-by-time differences across longer follow-up were not significant; larger trials are needed.",
+  "href": "https://pubmed.ncbi.nlm.nih.gov/41822426/"
+},
+  {
     id: "sharot-2007", year: 2007,
     title: "Neural mechanisms mediating optimism bias",
     authors: "Sharot, Riccardi, Raio & Phelps", journal: "Nature", kind: "Primary fMRI study", signal: "Developing",
@@ -133,3 +198,6 @@ export const pathwaySummary = [
   ["05", "Experience", "Adversity, safety, relationships, and culture tune expectations over time.", "The circumstances we live through"],
   ["06", "Action", "Behavior can reinforce agency or helplessness through real-world feedback.", "What happens when we act"],
 ];
+
+export const optimismSources = researchSources.filter(source => !["badulescu-2024", "li-2025"].includes(source.id));
+export const frontierSources = researchSources.filter(source => ["badulescu-2024", "li-2025"].includes(source.id));
