@@ -1,0 +1,18 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { PageFrame } from "../../components/PageFrame";
+const questions=[
+ ["What is The Optimism Project?","A resource dedicated to the causes, importance, science, and cultivation of optimism, alongside the development of a new Optimism Protocol.","/about"],
+ ["Where should I start?","Start with the definition of optimism, then explore its forms, origins, and benefits. If you want something practical, the workbook guides you through one situation and a next step.","/what-optimism-is"],
+ ["Is optimism the same as happiness?","Optimism concerns expectations about the future. Happiness often describes a present feeling. A person can be disappointed today while still expecting that things can improve.","/types-of-optimism"],
+ ["Does optimism mean ignoring problems?","Useful expectations can remain responsive to evidence. The site examines optimism bias and uncertainty alongside potential benefits, so good judgment remains part of the subject.","/types-of-optimism"],
+ ["Can optimism be cultivated?","Studies of structured exercises find average improvements in measured optimism, with important differences among methods, participants, and follow-up periods. Lasting effects and everyday benefits remain questions for evaluation.","/science-evidence"],
+ ["Is the Optimism Protocol finished?","No. Development draft 0.1 describes candidate components, research tracks, measures, and decisions still to make. It is not a validated program, registered clinical trial, or treatment offering.","/protocol"],
+ ["Does the protocol recommend a medicine?","No. Biological research is a separate exploratory track. Findings about reward, appetite, mood, or a laboratory task do not establish a medicine for optimism.","/research-program"],
+ ["Does the workbook give me an optimism score?","No. It creates a reflection and plan using your own words. It does not assign a personality type, diagnosis, or clinical interpretation.","/practice-workbook"],
+ ["Who can see my saved reflection?","The workbook sends no reflection to the project. Optional saving uses this browser’s local storage. Anyone using the same browser profile may be able to see it; you can remove the saved copy.","/privacy"],
+ ["How can I contribute?","Suggest a source, report a correction, offer expertise, or propose a community idea through the contribution form. Submissions are reviewed before any publication.","/contact"],
+ ["How often are the news and sources updated?","The site is curated rather than a continuous news feed. Research items show publication dates. You can request project updates or suggest a study for review.","/news-research"],
+];
+export const metadata:Metadata={title:"Frequently Asked Questions",description:"Answers about optimism, the new protocol, evidence, practical tools, privacy, and participation.",alternates:{canonical:"/faq"}};
+export default function FAQ(){const schema={"@context":"https://schema.org","@type":"FAQPage",mainEntity:questions.map(([q,a])=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a}}))};return <PageFrame eyebrow="Frequently asked questions" title="A few useful answers." description="About the subject, the project, and how to use the resources here."><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/><section className="wrap section faq-list">{questions.map(([q,a,href])=><details className="detail-card" key={q}><summary>{q}</summary><p>{a}</p><Link className="text-link" href={href}>Explore further →</Link></details>)}<p>Something else on your mind? <Link className="text-link" href="/contact">Send a question →</Link></p></section></PageFrame>}

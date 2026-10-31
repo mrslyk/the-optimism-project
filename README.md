@@ -1,100 +1,31 @@
 # The Optimism Project
 
-A public educational website for the science and practice of realistic optimism.
+A public resource about the causes, importance, science, and cultivation of optimism, and the development of a new Optimism Protocol.
 
-It includes substantive sections for the core idea, evidence standards, practices, experts, news and research, community, projects and funding, and about/contact. Scientific references, current news, expert profiles, payments, and form delivery are intentionally held behind clearly labeled placeholders until their source and production systems are verified.
+Production: https://optimism-project.netlify.app/
 
-See `SETUP.md` for the Stripe and contact integration checklist and `.env.example` for required configuration.
+The visitor journey connects definitions and types, origins, benefits, measurement, a searchable evidence library, practices, a private reflection workbook, researchers, sourced articles, and a versioned protocol development draft. Site search, FAQs, editorial standards, privacy information, contribution forms, and update requests support that journey.
 
-## Prerequisites
+The protocol is an editorial development draft. No trial is active and the combined program has not been validated. Research summaries distinguish findings from limits and link to originals. The people directory describes published work without claiming affiliation or endorsement.
 
-- Node.js `>=22.13.0`
+## Development
 
-## Quick Start
+Node.js 22.13 or newer. Install dependencies with `npm install`.
 
-```bash
-npm install
-npm run dev
-npm run build
-```
+- `npm run build:netlify`: native Next.js production build used by Netlify.
+- `npx next start --hostname 127.0.0.1 --port 3187`: serve that build locally.
+- `npm run dev`: original vinext development server.
+- `npm test`: original Sites build and rendered-page smoke tests.
 
-This starter does not use `wrangler.jsonc`.
+## Content and tools
 
-## Included Shape
+- `lib/topics.ts`: educational pages and related reading.
+- `lib/research.ts` and `lib/research-additions.ts`: attributed studies and evidence limits.
+- `lib/protocol.ts`: candidate components, roadmap, measures, open decisions, version history.
+- `lib/blog.ts`: dated, sourced articles.
+- `components/`: search, evidence filters and reading list, people directory, workbook, forms, and reading utilities.
+- `public/__forms.html`: Netlify form definitions. Contribution and update forms submit to this endpoint.
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+Workbook text and saved reading lists use browser storage only. Contact and update submissions are stored by Netlify Forms with explicit consent. Nothing is automatically published or emailed. Online payments await project-specific payment links and recipient terms; funding enquiries already use the contribution form.
 
-## Workspace Auth Headers
-
-OpenAI workspace sites can read the current user's email from
-`oai-authenticated-user-email`.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
-```
-
-## Optional Dispatch-Owned ChatGPT Sign-In
-
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
-
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
-
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
-
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
-
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
-
-## Useful Commands
-
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+See `SETUP.md` for deployment and form administration. The original Sites configuration is retained separately from the native Netlify build.

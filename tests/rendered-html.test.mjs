@@ -28,21 +28,30 @@ test("renders the finished publication homepage", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
-test("ships research, blog, donation, and safety infrastructure", async () => {
-  const [research, program, blog, donate, sources, env] = await Promise.all([
-    readFile(new URL("../app/science-evidence/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/research-program/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/blog/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/donate/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../lib/research.ts", import.meta.url), "utf8"),
-    readFile(new URL("../.env.example", import.meta.url), "utf8"),
-  ]);
-  assert.match(research, /The science of optimism/);
-  assert.match(program, /One research ambition/);
-  assert.match(program, /no treatment in development or clinical trial underway/i);
-  assert.match(blog, /first dispatch is still to come/);
-  assert.match(donate, /Donations are not open yet/);
-  assert.match(sources, /pubmed\.ncbi\.nlm\.nih\.gov|nature\.com/);
-  assert.match(sources, /What it does not prove|caution/i);
-  assert.match(env, /NEXT_PUBLIC_DONATE_100_URL=/);
+test("connects the evidence library, protocol, and contribution routes", async () => {
+  for (const [path, patterns] of [
+    ["/protocol", [/Development draft 0.1/, /Candidate ingredients/, /Version history/, /href="\/protocol\/draft.txt"/]],
+    ["/science-evidence", [/Search the evidence/, /My reading list/, /Read the original source/]],
+    ["/practice-workbook", [/Save on this device/, /Download reflection/, /Nothing you write here is sent/]],
+    ["/contact", [/action="\/__forms.html"/, /optimism-contact/, /optimism-updates/]],
+    ["/blog", [/The different meanings of optimism/, /From a better possibility to a useful next step/, /developing the Optimism Protocol/]],
+  ]) {
+    const response = await render(path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    for (const pattern of patterns) assert.match(html, pattern, path);
+  }
+});
+
+test("provides matching Netlify collection definitions and a published protocol download", async () => {
+  const forms = await readFile(new URL("../public/__forms.html", import.meta.url), "utf8");
+  assert.match(forms, /name="optimism-contact"/);
+  assert.match(forms, /name="optimism-updates"/);
+  assert.match(forms, /data-netlify="true"/);
+  const response = await render("/protocol/draft.txt");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type"), /text\/plain/);
+  const draft = await response.text();
+  assert.match(draft, /Development draft 0.1/);
+  assert.match(draft, /unresolved|decisions/i);
 });

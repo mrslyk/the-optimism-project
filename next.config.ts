@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_SITE_URL:
       process.env.NEXT_PUBLIC_SITE_URL ||
       process.env.URL ||
-      "https://the-optimism-project.parsaverse.chatgpt.site",
+      "https://optimism-project.netlify.app",
   },
 };
 

@@ -1,3 +1,4 @@
+import { researchAdditions } from "./research-additions";
 export type Signal = "Supported" | "Developing" | "Open question";
 
 export type ResearchSource = {
@@ -15,6 +16,7 @@ export type ResearchSource = {
 };
 
 export const researchSources: ResearchSource[] = [
+  ...researchAdditions,
   {
   "id": "carver-2010",
   "year": 2010,

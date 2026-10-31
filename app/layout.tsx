@@ -4,7 +4,7 @@ import "./globals.css";
 
 const geist = Geist({ variable: "--font-sans", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://the-optimism-project.parsaverse.chatgpt.site";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://optimism-project.netlify.app";
 
 const siteSchema = {
   "@context": "https://schema.org",
