@@ -1,0 +1,21 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Footer, Header } from "../site-chrome";
+
+export const metadata: Metadata = { title: "The Pessimism Research Program", description: "A rigorous research agenda for studying metabolic, reward, stress, and belief-updating pathways relevant to persistent pessimism." };
+
+const stages = [
+  ["01", "Define the phenotype", "Separate dispositional pessimism, optimism bias, depression, anxiety, threat learning, anhedonia, and accurate negative expectations. Choose validated measures and clinically meaningful endpoints."],
+  ["02", "Map the mechanism", "Test belief updating, future simulation, reward and punishment learning, interoception, stress reactivity, metabolic markers, and behavior in appropriately powered human studies."],
+  ["03", "Validate the target", "Establish whether GLP-1 signaling—or another pathway—causally changes the defined phenotype, with replication and independent teams before making an efficacy claim."],
+  ["04", "Evaluate interventions", "Only after target validation: preregister trials, use credible controls, monitor psychiatric and metabolic safety, publish null results, and follow regulatory and ethics requirements."],
+];
+
+export default function ResearchProgram() { return <><Header/><main className="research-program">
+  <section className="program-hero"><div className="wrap"><p className="eyebrow">Translational research agenda</p><h1>A GLP-1-inspired development program for pessimism.</h1><p>A north star for investigating whether metabolic–reward signaling can help explain or alter persistently negative expectations—without getting ahead of the science.</p><div className="status-banner"><strong>Current status: hypothesis.</strong> The Optimism Project has no drug, validated target, clinical protocol, regulatory authorization, or evidence of efficacy for pessimism.</div></div></section>
+  <section className="wrap program-thesis"><div><p className="kicker">Why GLP-1 is interesting</p><h2>Metabolism is also information.</h2></div><div><p>GLP-1 is a peptide signal involved in glucose regulation, gastrointestinal function, appetite, and central nervous-system processes related to food reward. That makes it scientifically interesting as part of a broader question: how do bodily state and reward valuation shape what the future feels worth pursuing?</p><p>The leap from food-related reward to pessimistic beliefs is large. It requires direct evidence, not analogy.</p></div></section>
+  <section className="program-stages"><div className="wrap"><p className="kicker">The development path</p><h2>What responsible progress would require.</h2><div className="stage-list">{stages.map(([n,t,b])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{b}</p></article>)}</div></div></section>
+  <section className="wrap falsification"><div><p className="kicker">Falsification first</p><h2>What would change our mind?</h2></div><ul><li>High-quality human studies show no relationship between GLP-1 manipulation and the relevant cognitive endpoints.</li><li>Any observed change is fully explained by weight loss, glycemic improvement, expectancy, or general wellbeing.</li><li>Effects do not replicate, are too small to matter, or create unacceptable psychiatric or metabolic risk.</li><li>The proposed “pessimism” measure collapses distinct conditions that require different responses.</li></ul></section>
+  <section className="program-close"><div className="wrap"><h2>Fund the question, not the conclusion.</h2><p>Donations support independent evidence synthesis, research design, public education, and—only with qualified institutional partners—future studies. They do not purchase access to an experimental therapy.</p><div><Link className="button button-light" href="/donate">Support the research <span>→</span></Link><Link className="text-link light" href="/science-evidence">Read the source library <span>↗</span></Link></div></div></section>
+  <div className="medical-disclosure wrap">Educational and research-planning content only. GLP-1 receptor agonists are prescription medicines approved for specific metabolic indications; do not use or change a medication for optimism, pessimism, mood, or another unapproved purpose without qualified medical care.</div>
+  </main><Footer/></> }

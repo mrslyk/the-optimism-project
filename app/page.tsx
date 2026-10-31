@@ -23,7 +23,7 @@ export default function Home() {
           <div className="hero-copy wrap">
             <p className="eyebrow">A public project for realistic hope</p>
             <h1>A clearer way to face <em>what’s next.</em></h1>
-            <p className="hero-dek">Pessimism gets a head start. The Optimism Project gathers the science, practices, people, and projects that help us see more possibilities—and act on the ones that are real.</p>
+            <p className="hero-dek">Pessimism gets a head start. We map the brain, body, and lived pathways that shape expectations—then ask how greater possibility might be learned, supported, and scientifically developed.</p>
             <div className="hero-actions">
               <Link className="button button-light" href="/what-optimism-is">Start with the idea <span>→</span></Link>
               <Link className="text-link light" href="/science-evidence">Explore the evidence <span>↗</span></Link>
@@ -54,7 +54,7 @@ export default function Home() {
             <div>
               <p className="kicker coral">Our evidence promise</p>
               <h2>Confidence should be visible.</h2>
-              <p>Every future research summary will show what kind of evidence it reflects, what it can’t establish, and where interpretation begins.</p>
+              <p>The source library now links published work on future simulation, belief updating, dopamine, stress biology, inflammation, development, and GLP-1 reward signaling.</p>
               <Link className="text-link" href="/science-evidence">Read the evidence standard <span>→</span></Link>
             </div>
             <div className="signal-card">
@@ -66,6 +66,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="research-feature"><div className="wrap research-feature-inner"><div><p className="kicker coral">The central research program</p><h2>Can we develop a counterweight to persistent pessimism?</h2><p>GLP-1 therapies changed how medicine thinks about metabolism and appetite. Our research thesis asks whether metabolic–reward signaling can also illuminate future belief, motivation, and pessimism. Today, that is a hypothesis—not a treatment.</p><div><Link className="button button-light" href="/research-program">Explore the program <span>→</span></Link><Link className="text-link light" href="/science-evidence">Read the papers <span>↗</span></Link></div></div><div className="research-mark" aria-hidden="true"><span>GLP</span><b>?</b><small>HYPOTHESIS<br/>NOT TREATMENT</small></div></div></section>
 
         <section className="wrap section">
           <div className="section-heading">
@@ -108,7 +110,7 @@ export default function Home() {
 
         <section className="newsletter">
           <div className="wrap newsletter-inner">
-            <div><p className="kicker coral">The Bright Side, without the spin</p><h2>A future briefing for rigorous hope.</h2><p>Research notes, useful practices, and projects worth watching. Sign-up will open when our mailing system is configured.</p></div>
+            <div><p className="kicker coral">The Optimism Dispatch</p><h2>Science, argument, and field notes.</h2><p>The publication is ready for its first signed essay. Newsletter sign-up will open when the mailing system is configured.</p><p><Link className="text-link light" href="/blog">Visit the blog <span>→</span></Link></p></div>
             <form className="signup" aria-label="Newsletter interest form"><label htmlFor="email">EMAIL ADDRESS</label><div><input id="email" type="email" placeholder="you@example.com" disabled/><button disabled>Coming soon</button></div><small>No list is active yet. We won’t collect your address until the system is ready.</small></form>
           </div>
         </section>
