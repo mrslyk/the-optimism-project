@@ -1,0 +1,2 @@
+import { memomeIdeas } from "../../../lib/memome";
+export function GET(){return Response.json({title:"Optimism Mind Memome",version:"0.1",status:"Curriculum development draft",model:"Slyk learn-to-earn; Naval/Decalog subject content pack",scope:"Candidate ideas, evidence links, challenges, and proof of understanding. Not a deployed game or a validated optimism intervention.",levels:memomeIdeas.map((idea,index)=>({level:index+1,...idea}))},{headers:{"Content-Disposition":"attachment; filename=optimism-mind-memome-curriculum-0.1.json"}})}

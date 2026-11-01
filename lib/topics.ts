@@ -757,5 +757,133 @@ export const pages: Record<string, PageData> = {
       "label": "Explore the different forms of optimism.",
       "href": "/types-of-optimism"
     }
+  },
+  "pessimism": {
+  "eyebrow": "Pessimism & negative expectations",
+  "title": "Understanding pessimism.",
+  "dek": "Why we anticipate unfavorable outcomes, how those expectations differ from optimism, and when caution helps us prepare.",
+  "tone": "blue-page",
+  "sections": [
+    {
+      "title": "Two questions, not always one slider",
+      "body": "Optimism concerns favorable expectations; pessimism concerns unfavorable ones. Researchers often combine them in one measure, but large studies also support examining the two separately. A reanalysis of 61 samples found different associations with physical-health outcomes. The distinction depends on the measure and question; it does not divide people into two fixed types.",
+      "links": [
+        {
+          "label": "Measurement study",
+          "href": "/science-evidence#herzberg-2006"
+        },
+        {
+          "label": "61-sample reanalysis",
+          "href": "/science-evidence#scheier-2021"
+        }
+      ]
+    },
+    {
+      "title": "An outlook develops in a real situation",
+      "body": "Expectations are shaped by experience, learning, temperament, and circumstances. Repeated setbacks, unreliable support, or a genuinely difficult environment can make unfavorable outcomes seem likely. Understanding the context is part of understanding the expectation; a cautious forecast is not automatically a thinking error.",
+      "links": [
+        {
+          "label": "Origins and influences",
+          "href": "/causes-of-optimism"
+        },
+        {
+          "label": "Definitions and forms",
+          "href": "/types-of-optimism"
+        }
+      ]
+    },
+    {
+      "title": "How explanations can spread a setback",
+      "body": "Explanatory-style research asks whether people describe a bad event as lasting or temporary, widespread or specific, and related to themselves or circumstances. A conclusion such as “this will always happen everywhere” reaches further than a description of one event. Theory and prospective studies motivate examining that leap; they do not prove that a new slogan changes someone’s life.",
+      "links": [
+        {
+          "label": "Foundational explanatory-style paper",
+          "href": "/science-evidence#abramson-1978"
+        },
+        {
+          "label": "Prospective cognitive-style study",
+          "href": "/science-evidence#alloy-2006"
+        }
+      ]
+    },
+    {
+      "title": "Helplessness and the experience of control",
+      "body": "The original learned-helplessness account has changed with later neuroscience. A major 2016 synthesis emphasizes learning that a stressor can be controlled. Human laboratory research also finds effects of controllability on later fear responses. These findings concern particular tasks and mechanisms, not a claim that every situation can be controlled through belief.",
+      "links": [
+        {
+          "label": "Learned helplessness at fifty",
+          "href": "/science-evidence#maier-2016"
+        },
+        {
+          "label": "Human controllability experiment",
+          "href": "/science-evidence#hartley-2014"
+        }
+      ]
+    },
+    {
+      "title": "When pessimism becomes preparation",
+      "body": "Defensive pessimism describes a strategy in which some people anticipate difficulties to manage anxiety and prepare for a performance. In experiments, disrupting that strategy could impair performance. It differs from expecting failure across all of life. A useful game should teach people to distinguish planning from overgeneralization, while allowing more than one effective strategy.",
+      "links": [
+        {
+          "label": "Defensive pessimism experiments",
+          "href": "/science-evidence#norem-1986"
+        },
+        {
+          "label": "Obstacle-to-action planning",
+          "href": "/science-evidence#wang-2021"
+        }
+      ]
+    },
+    {
+      "title": "A darker forecast is not automatically more accurate",
+      "body": "The accuracy of a prediction depends on evidence and outcomes. A preregistered replication did not find that depressive symptoms produced more accurate judgments of control in its tasks. That finding does not settle every question about mood and judgment. Depression, pessimism, caution, and realism remain different concepts.",
+      "links": [
+        {
+          "label": "Depressive-realism replication",
+          "href": "/science-evidence#dev-2022"
+        },
+        {
+          "label": "Unrealistic optimism and comparison standards",
+          "href": "/science-evidence#shepperd-2015"
+        }
+      ]
+    },
+    {
+      "title": "Increasing optimism and reducing pessimism may differ",
+      "body": "Some future-imagery experiments assess positive and negative expectations separately. Recent Best Possible Self studies found immediate changes in both; a 2025 trial retained a smaller positive-expectation effect at one week. Another adolescent study changed positive affect without significantly reducing negative affect. A feeling, an expectation, and a durable change in outlook need different measurements.",
+      "links": [
+        {
+          "label": "2023 online experiment",
+          "href": "/science-evidence#boselie-2023"
+        },
+        {
+          "label": "2025 expectation trial",
+          "href": "/science-evidence#booth-2025"
+        },
+        {
+          "label": "2025 adolescent affect trial",
+          "href": "/science-evidence#bartha-2025"
+        }
+      ]
+    },
+    {
+      "title": "What this means for Mind Memome",
+      "body": "The curriculum can help players recognize an unsupported generalization, find an available action, imagine a plausible future, and prepare for obstacles. Each idea needs its own source and challenge. Game completion can demonstrate learning; whether the game changes optimism or pessimism is a separate research question for the protocol.",
+      "links": [
+        {
+          "label": "Explore the candidate ideas",
+          "href": "/mind-memome"
+        },
+        {
+          "label": "Protocol evaluation",
+          "href": "/protocol#measures"
+        }
+      ]
+    }
+  ],
+  "next": {
+    "label": "Explore the ideas that could become game challenges.",
+    "href": "/mind-memome"
   }
+}
 };

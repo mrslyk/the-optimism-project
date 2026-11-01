@@ -40,3 +40,51 @@ button,input,select,textarea{font:inherit}button,summary{cursor:pointer}button:d
 @media print{body{background:white;color:black;font-family:Georgia,serif}.site-header,footer,.skip-link,.reading-tools,.filter-panel,.filter-summary,.source-actions,.tool-actions,.content-layout>aside,.hero-art,.hero-ticker{display:none!important}.wrap,.article-wrap{width:100%;max-width:none}.page-hero,.article-page header,.hero{background:white;color:black;padding:20px 0;min-height:0;border-bottom:1px solid}.page-hero h1,.article-page h1{font-size:38px}.page-hero .wrap>p:not(.eyebrow){font-size:16px}.section,.content-layout,.article-page>article{padding:25px 0;display:block}.protocol-content h2{font-size:26px}.protocol-content h3{font-size:20px}.protocol-content p,.protocol-content li{font-size:12px}.article-sections article{padding-left:0}.section-number{display:none}.article-sections h2{font-size:26px}.article-sections p{font-size:13px}.protocol-content>section{margin-bottom:20px;padding-bottom:20px}a[href^="http"]:after{content:" (" attr(href) ")";font-size:9px;overflow-wrap:anywhere}.directory-grid,.workbook-grid,.track-grid{display:block}.directory-card,.source-card,.protocol-component{break-inside:avoid}.tool-note,.review-panel,.next-card{background:white;box-shadow:none}.workbook textarea{border-color:#aaa;min-height:100px}details>*{display:block!important}}
 
 .journey-map{list-style:none;padding:0}.journey-map li{border-right:1px solid;display:flex}.journey-map li:last-child{border-right:0}.journey-map a{border:0;width:100%;line-height:1.5}.journey-map a:last-child{border:0}@media(max-width:900px){.journey-map li{border-right:0;border-bottom:1px solid}.journey-map li:last-child{border-bottom:0}}
+
+/* Research collections, reading room, and the developing game curriculum. */
+.science-hero h1{max-width:1100px}
+.research-routes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid;border-left:1px solid}
+.research-routes>a{display:flex;flex-direction:column;align-items:flex-start;padding:28px;border-right:1px solid;border-bottom:1px solid;transition:background .2s}
+.research-routes>a:hover{background:var(--cream)}
+.research-routes>a:nth-child(3){background:var(--yellow)}
+.research-routes h2{font-size:27px;line-height:1.08;letter-spacing:-.04em;margin:28px 0 12px}
+.research-routes p{font-family:Georgia,serif;font-size:15px;margin:0 0 28px}
+.research-routes .text-link{margin-top:auto}
+.library-lenses,.reading-room-nav{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.library-lenses .chip{padding:13px 16px;font-size:13px;text-align:left}
+.reading-room-nav{gap:16px 30px;padding-block:20px;border-bottom:1px solid}
+.reading-room-nav a{font-size:14px;font-weight:700;border-bottom:1px solid;padding-bottom:4px}
+.resource-group{padding-top:35px}
+.resource-group .directory-grid{margin-bottom:30px}
+.resource-group .directory-card{min-width:0}
+.resource-group .directory-card h2{font-size:34px;margin-top:18px}
+.resource-byline{font-family:var(--font-mono);font-size:11px;line-height:1.5;margin:0}
+.resource-focus{font-family:Georgia,serif;font-size:20px;line-height:1.4}
+.resource-limits{font-size:13px;border-top:1px solid var(--line);padding-top:18px;margin-bottom:25px}
+.featured-resource{background:var(--yellow)}
+.resource-group .directory-card>a+a{margin-top:8px}
+.research-hub-intro{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:start}
+.research-hub-intro h2{font-size:clamp(38px,4.5vw,60px);letter-spacing:-.05em;line-height:1.02;margin:24px 0}
+.research-hub-intro>div:last-child>p:not(.note){font-family:Georgia,serif;font-size:19px}
+.memome-introduction{border-top:1px solid;padding-top:55px;margin:65px 0 35px;max-width:900px}
+.memome-introduction h2{font-size:clamp(35px,4vw,48px);line-height:1.04;letter-spacing:-.045em;margin:22px 0}
+.memome-introduction>p:last-child{font-family:Georgia,serif;font-size:18px}
+.memome-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:32px 0 55px;align-items:start}
+.memome-card{border:1px solid;padding:30px;min-width:0;background:var(--paper)}
+.memome-card-head .kicker{margin-top:0}
+.evidence-label{display:inline-block;font-size:11px;line-height:1.4;padding:7px 10px;background:var(--cream);border:1px solid var(--line)}
+.memome-card h2{font-size:clamp(28px,3vw,38px);line-height:1.06;letter-spacing:-.04em;margin:28px 0}
+.belief-comparison>div{padding:18px 0;border-top:1px solid var(--line)}
+.belief-comparison>div:last-child{border-left:3px solid var(--green);padding:18px 0 0 18px}
+.belief-comparison h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 12px}
+.belief-comparison p{font-family:Georgia,serif;font-size:18px;margin:0}
+.memome-card .detail-card{border:0;border-top:1px solid var(--line);background:none;margin:25px 0 0;padding:0}
+.memome-card .detail-card summary{font-size:14px;padding-top:19px}
+.memome-card .detail-card summary:after{top:13px}
+.memome-card .detail-card p{font-size:15px}
+.memome-grid~.next-card{margin-left:0}
+.memome-grid~.next-card>p:not(:first-child){font-family:Georgia,serif;font-size:18px;letter-spacing:0}
+@media(max-width:1000px){.research-routes{grid-template-columns:repeat(2,minmax(0,1fr))}.research-hub-intro{gap:40px}}
+@media(max-width:900px){.research-hub-intro{grid-template-columns:minmax(0,1fr);gap:10px}.memome-grid{grid-template-columns:minmax(0,1fr)}.site-header .mobile-menu nav{max-height:calc(100dvh - 82px);overflow-y:auto;overscroll-behavior:contain}}
+@media(max-width:560px){.research-routes{grid-template-columns:minmax(0,1fr)}.research-routes>a{padding:25px}.research-routes h2{margin-top:18px}.library-lenses .chip{font-size:12px;padding:11px 12px}.resource-group .directory-card h2{font-size:29px}.memome-card{padding:22px}.memome-introduction{margin-top:45px;padding-top:35px}}
+@media print{.library-lenses,.reading-room-nav{display:none}.memome-grid,.research-hub-intro,.research-routes{display:block}.memome-card{break-inside:avoid;margin-bottom:20px}.memome-card h2{font-size:25px}}

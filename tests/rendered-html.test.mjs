@@ -55,3 +55,37 @@ test("provides matching Netlify collection definitions and a published protocol 
   assert.match(draft, /Development draft 0.1/);
   assert.match(draft, /unresolved|decisions/i);
 });
+
+test("connects pessimism research and books to an attributed game curriculum", async () => {
+  for (const [path, patterns] of [
+    ["/pessimism", [/Defensive pessimism/i, /science-evidence#scheier-2021/, /mind-memome/]],
+    ["/reading-room", [/The Rational Optimist/, /How Innovation Works/, /Our World in Data/, /rational-optimist/]],
+    ["/rational-optimist", [/Matt Ridley/, /specialization/, /mind-memome/]],
+    ["/mind-memome", [/Slyk learn-to-earn/, /Naval and Decalog/, /proof of understanding/, /curriculum.json/]],
+  ]) {
+    const response = await render(path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    for (const pattern of patterns) assert.match(html, pattern, path);
+  }
+  const response = await render("/mind-memome/curriculum.json");
+  assert.equal(response.status, 200);
+  const curriculum = await response.json();
+  assert.equal(curriculum.levels.length, 10);
+  assert.equal(new Set(curriculum.levels.map(level => level.id)).size, 10);
+  for (const level of curriculum.levels) {
+    assert.ok(level.sources.length && level.challenge && level.proof, level.id);
+  }
+  // Every cited internal anchor must actually exist in the rendered destination.
+  const pages = new Map();
+  for (const source of curriculum.levels.flatMap(level => level.sources)) {
+    if (!source.href.startsWith("/")) continue;
+    const [path, id] = source.href.split("#");
+    if (!pages.has(path)) {
+      const target = await render(path);
+      assert.equal(target.status, 200, source.href);
+      pages.set(path, await target.text());
+    }
+    if (id) assert.ok(pages.get(path).includes(`id="${id}"`), source.href);
+  }
+});
