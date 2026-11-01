@@ -42,6 +42,32 @@ button,input,select,textarea{font:inherit}button,summary{cursor:pointer}button:d
 .journey-map{list-style:none;padding:0}.journey-map li{border-right:1px solid;display:flex}.journey-map li:last-child{border-right:0}.journey-map a{border:0;width:100%;line-height:1.5}.journey-map a:last-child{border:0}@media(max-width:900px){.journey-map li{border-right:0;border-bottom:1px solid}.journey-map li:last-child{border-bottom:0}}
 
 /* Research collections, reading room, and the developing game curriculum. */
+.mind-body-home{background:var(--green);padding:75px 0;border-bottom:1px solid}
+.mind-body-home .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.mind-body-home h2{font-size:clamp(40px,5vw,64px);letter-spacing:-.05em;line-height:1;margin:22px 0}
+.mind-body-home p:not(.kicker){font-family:Georgia,serif;font-size:20px}
+.meme-takeaway{background:var(--yellow);border-left:3px solid var(--ink);padding:18px 20px;margin-bottom:28px}
+.meme-takeaway>span{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em}
+.meme-takeaway>p{font-size:21px;line-height:1.35;font-weight:700;margin:10px 0 0}
+.source-excerpt{margin:25px 0;padding-left:18px;border-left:3px solid var(--green)}
+.source-excerpt blockquote{font-family:Georgia,serif;font-size:22px;line-height:1.4;margin:0 0 14px}
+.source-excerpt figcaption{font-size:12px;line-height:1.6}
+.source-excerpt a{text-decoration:underline;text-underline-offset:3px}
+.cadoo-connection{padding:40px;background:var(--cream);border:1px solid;margin:45px 0 60px}
+.cadoo-connection h2{font-size:clamp(35px,4.5vw,54px);line-height:1.03;letter-spacing:-.04em;margin:20px 0}
+.cadoo-connection>p:not(.kicker):not(.note){font-family:Georgia,serif;font-size:19px;max-width:780px}
+.cadoo-connection .status-tag{margin-top:14px;font-size:10px;max-width:100%}
+.cadoo-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:0!important;list-style:none;margin:35px 0 0}
+.cadoo-steps li{border-top:1px solid var(--ink);padding-top:18px;min-width:0}
+.cadoo-steps li>span{font-family:var(--font-mono);font-size:11px}
+.cadoo-steps h3{font-family:var(--font-sans),sans-serif;font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:18px 0 12px}
+.cadoo-steps p{font-size:15px;font-family:Georgia,serif}
+.protocol-content .cadoo-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cadoo-connection .note{font-size:13px;font-family:var(--font-sans),sans-serif}
+.cadoo-connection+.next-card{margin-left:0}
+.cadoo-connection+.next-card>p:not(:first-child){font-family:Georgia,serif;font-size:18px;letter-spacing:0}
+@media(max-width:900px){.mind-body-home .wrap{grid-template-columns:minmax(0,1fr);gap:15px}.cadoo-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.cadoo-connection{padding:24px}.cadoo-steps,.protocol-content .cadoo-steps{grid-template-columns:minmax(0,1fr)}.meme-takeaway{padding:15px}.meme-takeaway>p{font-size:20px}}
 .science-hero h1{max-width:1100px}
 .research-routes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid;border-left:1px solid}
 .research-routes>a{display:flex;flex-direction:column;align-items:flex-start;padding:28px;border-right:1px solid;border-bottom:1px solid;transition:background .2s}

@@ -16,7 +16,7 @@ export default function SciencePage() {
       <p className="eyebrow">Science & evidence</p>
       <h1>Optimism. Pessimism.<br/>The evidence.</h1>
       <p>The papers, theories, experiments, and data behind our understanding of outlook. Start with a question, inspect the evidence, and follow the original source.</p>
-      <div className="article-source-links"><a href="#library">Browse the annotated papers ↓</a><Link href="/reading-room">Books, research sites & data ↗</Link></div>
+      <div className="article-source-links"><a href="#library">Browse the annotated papers ↓</a><Link href="/reading-room">Books, research sites & data ↗</Link><Link href="/mind-and-body">Mind & body ↗</Link></div>
     </div></section>
 
     <section className="wrap science-intro">

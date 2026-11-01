@@ -137,7 +137,7 @@ export const blogPosts: BlogPost[] = [
       {
         paragraphs: [
           "The Optimism Project has two connected jobs. The first is to become a definitive resource on optimism: what it is, where it comes from, why it matters, how people cultivate it, and what the science can establish. The second is to develop a protocol that makes that knowledge practical and testable.",
-          "The Optimism Protocol is at development draft 0.1. It is an outline for refinement, not a validated intervention or a claim that a particular sequence produces lasting change. Publishing the draft lets readers see the questions and design choices while the work is taking shape.",
+          "The Optimism Protocol began with development draft 0.1. It is an outline for refinement, not a validated intervention or a claim that a particular sequence produces lasting change. Publishing the draft lets readers see the questions and design choices while the work is taking shape.",
         ],
       },
       {

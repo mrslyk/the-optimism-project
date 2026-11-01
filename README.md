@@ -6,9 +6,11 @@ Production: https://optimism-project.netlify.app/
 
 The visitor journey connects definitions and types, origins, benefits, measurement, a searchable evidence library, practices, a private reflection workbook, researchers, sourced articles, and a versioned protocol development draft. Site search, FAQs, editorial standards, privacy information, contribution forms, and update requests support that journey.
 
-The research collection includes 36 annotated sources on optimism, pessimism, cultivation, and methods; a separate pessimism guide; and a reading room of 13 books, research hubs, and data sources. A guide to Matt Ridley’s *The Rational Optimist* connects societal progress with the broader curriculum. The Mind Memome contains ten candidate ideas, their evidence limits, original challenge concepts, and ways to demonstrate understanding. It is a downloadable curriculum draft for the existing Slyk Naval/Decalog game model, not a deployed earning service or a validated intervention.
+The research collection includes 39 annotated sources on optimism, pessimism, cultivation, and methods; a separate pessimism guide; and a reading room of 13 books, research hubs, and data sources. A guide to Matt Ridley’s *The Rational Optimist* connects societal progress with the broader curriculum. The Mind Memome contains thirteen candidate ideas, memorable original phrases, attributed brief excerpts, evidence limits, original challenge concepts, and ways to demonstrate understanding. It is a downloadable curriculum draft for the existing Slyk Naval/Decalog game model, not a deployed earning service or a validated intervention.
 
 The protocol is an editorial development draft. No trial is active and the combined program has not been validated. Research summaries distinguish findings from limits and link to originals. The people directory describes published work without claiming affiliation or endorsement.
+
+The mind-and-body guide records the planned Cadoo connection: verified completion of a linked Cadoo game triggers its Optimism reward under the existing Slyk model. Account linking, eligible challenges, completion verification, and reward delivery remain deferred; no connector or reward endpoint is enabled in this release. Protocol and curriculum drafts are version 0.2.
 
 ## Development
 
@@ -24,6 +26,7 @@ Node.js 22.13 or newer. Install dependencies with `npm install`.
 - `lib/topics.ts`: educational pages and related reading.
 - `lib/research.ts`, `lib/research-additions.ts`, and `lib/pessimism-research.ts`: attributed studies and evidence limits.
 - `lib/resource-guide.ts`: books, research institutions, datasets, and the Ridley reading guide.
+- `lib/mind-body.ts`: movement and sleep research plus the explicitly planned Cadoo connection.
 - `lib/memome.ts`: draft game curriculum, source links, challenges, and proof of understanding. Exported at `/mind-memome/curriculum.json`.
 - `lib/protocol.ts`: candidate components, roadmap, measures, open decisions, version history.
 - `lib/blog.ts`: dated, sourced articles.

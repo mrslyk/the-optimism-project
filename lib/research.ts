@@ -1,3 +1,4 @@
+import { mindBodyResearch } from "./mind-body";
 import { researchAdditions } from "./research-additions";
 import { pessimismResearch } from "./pessimism-research";
 export type Signal = "Supported" | "Developing" | "Open question";
@@ -17,6 +18,7 @@ export type ResearchSource = {
 };
 
 export const researchSources: ResearchSource[] = [
+  ...mindBodyResearch,
   ...pessimismResearch,
   ...researchAdditions,
   {

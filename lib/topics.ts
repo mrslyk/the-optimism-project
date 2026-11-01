@@ -243,7 +243,7 @@ export const pages: Record<string, PageData> = {
         "body": "The new protocol will examine which components belong together, for whom, and in what sequence. The public development draft shows the candidate practices and how we propose to evaluate them.",
         "links": [
           {
-            "label": "Read development draft 0.1",
+            "label": "Read development draft 0.2",
             "href": "/protocol"
           }
         ]

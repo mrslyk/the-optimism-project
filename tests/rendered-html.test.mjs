@@ -30,7 +30,7 @@ test("renders the finished publication homepage", async () => {
 
 test("connects the evidence library, protocol, and contribution routes", async () => {
   for (const [path, patterns] of [
-    ["/protocol", [/Development draft 0.1/, /Candidate ingredients/, /Version history/, /href="\/protocol\/draft.txt"/]],
+    ["/protocol", [/Development draft 0.2/, /Candidate ingredients/, /Version history/, /href="\/protocol\/draft.txt"/]],
     ["/science-evidence", [/Search the evidence/, /My reading list/, /Read the original source/]],
     ["/practice-workbook", [/Save on this device/, /Download reflection/, /Nothing you write here is sent/]],
     ["/contact", [/action="\/__forms.html"/, /optimism-contact/, /optimism-updates/]],
@@ -52,7 +52,7 @@ test("provides matching Netlify collection definitions and a published protocol 
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type"), /text\/plain/);
   const draft = await response.text();
-  assert.match(draft, /Development draft 0.1/);
+  assert.match(draft, /Development draft 0.2/);
   assert.match(draft, /unresolved|decisions/i);
 });
 
@@ -61,7 +61,7 @@ test("connects pessimism research and books to an attributed game curriculum", a
     ["/pessimism", [/Defensive pessimism/i, /science-evidence#scheier-2021/, /mind-memome/]],
     ["/reading-room", [/The Rational Optimist/, /How Innovation Works/, /Our World in Data/, /rational-optimist/]],
     ["/rational-optimist", [/Matt Ridley/, /specialization/, /mind-memome/]],
-    ["/mind-memome", [/Slyk learn-to-earn/, /Naval and Decalog/, /proof of understanding/, /curriculum.json/]],
+    ["/mind-memome", [/Slyk play-to-earn/, /Naval and Decalog/, /proof of understanding/, /curriculum.json/]],
   ]) {
     const response = await render(path);
     assert.equal(response.status, 200, path);
@@ -71,11 +71,19 @@ test("connects pessimism research and books to an attributed game curriculum", a
   const response = await render("/mind-memome/curriculum.json");
   assert.equal(response.status, 200);
   const curriculum = await response.json();
-  assert.equal(curriculum.levels.length, 10);
-  assert.equal(new Set(curriculum.levels.map(level => level.id)).size, 10);
+  assert.equal(curriculum.levels.length, 13);
+  assert.equal(new Set(curriculum.levels.map(level => level.id)).size, 13);
   for (const level of curriculum.levels) {
     assert.ok(level.sources.length && level.challenge && level.proof, level.id);
   }
+  assert.equal(curriculum.version, "0.2");
+  assert.match(curriculum.cadooConnection.status, /not active/);
+  assert.ok(curriculum.levels.every(level => level.meme));
+  const bodyResponse = await render("/mind-and-body");
+  assert.equal(bodyResponse.status, 200);
+  const bodyHtml = await bodyResponse.text();
+  assert.match(bodyHtml, /Cadoo/);
+  assert.match(bodyHtml, /No Cadoo activity currently earns an Optimism reward/);
   // Every cited internal anchor must actually exist in the rendered destination.
   const pages = new Map();
   for (const source of curriculum.levels.flatMap(level => level.sources)) {

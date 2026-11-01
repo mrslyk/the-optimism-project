@@ -37,7 +37,7 @@ export type ProtocolMeasure = {
 
 export type OptimismProtocol = {
   title: string;
-  status: "Development draft 0.1";
+  status: "Development draft 0.2";
   purpose: string;
   scope: string;
   tracks: ProtocolTrack[];
@@ -56,14 +56,14 @@ export type OptimismProtocol = {
 
 export const protocol: OptimismProtocol = {
   title: "The Optimism Protocol",
-  status: "Development draft 0.1",
-  purpose: "Develop a practical, testable way to cultivate optimism: see worthwhile possibilities, respond to evidence, and take action toward a future that matters.",
+  status: "Development draft 0.2",
+  purpose: "Develop a practical, testable mind-and-body approach to optimism: learn useful ideas, respond to evidence, and turn worthwhile possibilities into action.",
   scope: "This draft sets out what we propose to develop and how we would evaluate it. The exercises below are candidate ingredients. Their combination, sequence, and schedule have not been validated as an Optimism Project protocol.",
   tracks: [
     {
       id: "practical-cultivation",
       title: "Practical cultivation",
-      description: "Build a program of reflection, future imagination, and goal planning that people can use in everyday life. Study whether it changes expectations and supports useful action over time.",
+      description: "Bring reflection, future imagination, goal planning, physical activity, and recovery into everyday practice. Study learning, participation, mood, and optimism as distinct outcomes.",
       questions: [
         "Which practices help which people, in which circumstances?",
         "How much practice is useful, and how long do any changes last?",
@@ -114,6 +114,19 @@ export const protocol: OptimismProtocol = {
       openQuestion: "Can reviewing predictions support more flexible expectations without increasing rumination or pressure to feel positive?",
       sources: [
         { label: "Shepperd et al., 2015 · Understanding unrealistic optimism", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4467896/" },
+      ],
+    },
+    {
+      id: "embodied-practice",
+      title: "Practice with mind and body",
+      purpose: "Connect a sourced idea with an achievable physical action, allowing for recovery and adaptation.",
+      practice: "Choose a movement goal suited to your circumstances, pair it with an idea about agency or follow-through, and reflect on the experience. The game design proposes Cadoo-confirmed completion as a trigger for the corresponding Optimism reward.",
+      evidence: "Activity and aspects of outlook are linked in longitudinal research; walking experiments concern immediate emotion. The combined curriculum and Cadoo reward connection remain untested.",
+      openQuestion: "Which accessible activities and recovery options support participation, and does combining learning with physical action affect outlook over time?",
+      sources: [
+        { label: "Activity and outlook study", href: "/science-evidence#karhu-2025" },
+        { label: "Movement experiments", href: "/science-evidence#miller-2016" },
+        { label: "Mind, body, and the planned Cadoo connection", href: "/mind-and-body" },
       ],
     },
   ],
@@ -186,6 +199,10 @@ export const protocol: OptimismProtocol = {
     "How will consent, data handling, access needs, and public reporting be designed before any study?",
   ],
   versions: [
+    {
+      version: "0.2", date: "2026-10-31", status: "Editorial development draft",
+      summary: "Makes mind and body explicit, adds physical practice and recovery to the candidate program, and records the planned Cadoo completion-to-Optimism reward connection. The integration is not active and the program remains unevaluated.",
+    },
     {
       version: "0.1",
       date: "2026-10-31",
